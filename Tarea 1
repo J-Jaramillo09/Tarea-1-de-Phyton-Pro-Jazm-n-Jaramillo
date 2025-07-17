@@ -1,0 +1,41 @@
+manerismos = {
+    "LOL": "Algo excepcionalmente raro o embarazoso",
+    "CRINGE": "Algo raro o embarazoso",
+    "ROFL": "Una respuesta a una broma",
+    "SHEESH": "Ligera desaprobación",
+    "CREEPY": "Aterrador, siniestro",
+    "AGGRO": "Ponerse agresivo/enojado"
+}
+
+print("Bienvenido al diccionario de manerismos juveniles.")
+print("Escribe una palabra para consultar su significado.")
+print("Escribe 'SALIR' para terminar el programa.\n")
+
+
+
+contador = 0
+seguir = True  
+
+while seguir:
+    word = input("Ingrese la palabra que desea consultar: ")
+    word = word.strip().upper()
+    if word == "SALIR":
+        print("¡Gracias por usar el diccionario! Hasta luego.")
+        break
+    elif word in manerismos:
+        print(word + ": " + manerismos[word] + "\n")
+        contador += 1
+        while True:
+            continuar = input("¿Deseas continuar en el programa? (si/no): ")
+            continuar = continuar.strip().lower()
+            if continuar == "si":
+                print("")
+                break
+            elif continuar == "no":
+                print("¡Gracias por usar el diccionario! Hasta luego.")
+                seguir = False  # 🔚 Detiene el bucle principal
+                break
+            elif continuar!="si"or continuar != "no":
+                print("Respuesta no válida. Por favor escribe 'si' o 'no'.\n")
+    else:
+        print("Lo siento, esa palabra no está en el diccionario.\n")
